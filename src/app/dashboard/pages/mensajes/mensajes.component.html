@@ -1,0 +1,11 @@
+<mat-card class="tarjeta__publicidad mt-4" 
+          *ngFor="let mensaje of mensajes">
+    <mat-card-header>
+      <mat-card-title>{{mensaje.nombreEmisor}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+          {{mensaje.message}}
+      </p>
+    </mat-card-content>
+</mat-card>

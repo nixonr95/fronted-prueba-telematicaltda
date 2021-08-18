@@ -1,0 +1,52 @@
+
+
+<mat-sidenav-container fullscreen>
+    
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar>
+            <span>Chat</span>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>chat</mat-icon>
+            </button>
+        </mat-toolbar>  
+        
+        <mat-nav-list>
+            <a routerLink="./listado" mat-list-item
+               *ngFor="let item of usuarios"
+               (click)="sidenav.toggle()  && enviarMensaje(item)">
+                <mat-icon mat-list-icon>people</mat-icon>
+                <span>{{item.name}}</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()"
+                matTooltip="Chat">
+            <mat-icon>chat</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="/dashboard"
+                matTooltip="Menú pricipal">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="/dashboard/mensajes"
+                matTooltip="Buzón de entrada">
+            <mat-icon>email</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <span>{{usuario.name}}</span>
+        <button mat-stroked-button color="warn" class="ms-2" (click)="logout()">
+            Logout
+        </button>
+    </mat-toolbar>
+
+    
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- <div class="spacer"></div>
+    <app-tarjeta-publicidad></app-tarjeta-publicidad> -->
+
+</mat-sidenav-container>

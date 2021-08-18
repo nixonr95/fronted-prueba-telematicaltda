@@ -1,0 +1,14 @@
+<h3> <b>Para:</b> {{data.name}}, {{data.email}}</h3>
+<hr/>
+
+<form autocomplete="off" [formGroup]="miFormulario"
+      (ngSubmit)="enviar()">
+    <div class="form-group">
+        <textarea class="form-control" rows="5" formControlName="message"></textarea>
+    </div>
+
+    <div>
+        <button mat-raised-button class="mt-3"
+                color="primary" type="submit">Enviar</button>
+    </div>
+</form>

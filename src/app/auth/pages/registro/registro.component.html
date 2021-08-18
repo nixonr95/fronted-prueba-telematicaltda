@@ -1,0 +1,60 @@
+<div class="register-page">
+    <form autocomplete="off" class="form__login" [formGroup]="miFormulario"
+          (ngSubmit)="crearUsuario()">
+        <h1>Crear Cuenta</h1>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre de usuario</mat-label>
+                <input matInput placeholder="Nombre de usuario"
+                       formControlName="usuario">
+                <mat-icon matSuffix>person</mat-icon>
+                <span class="form-text text-danger" *ngIf="campoNoValido('usuario')">
+                    Debe de ser en formato de nombre y apellido
+                </span>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email"
+                formControlName="email">
+                <mat-icon matSuffix>email</mat-icon>
+                <span class="form-text text-danger" *ngIf="campoNoValido('email')">
+                    {{emailErrorMsg}}
+                </span>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="Contraseña" type="password"
+                       formControlName="contraseña">
+                <mat-icon matSuffix>password</mat-icon>
+                <span class="form-text text-danger" *ngIf="campoNoValido('contraseña')">
+                    La contraseña debe ser mayor de 6 caracteres
+                </span>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Confirme su contraseña</mat-label>
+                <input matInput placeholder="Confirme su contraseña" type="password"
+                       formControlName="contraseña2">
+                <mat-icon matSuffix>password</mat-icon>
+                <span class="form-text text-danger" *ngIf="campoNoValido('contraseña2')">
+                    Las contraseñas deben ser iguales
+                </span>
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <button mat-raised-button color="primary" type="submit">Registrarse</button>
+        </div>
+        <div class="mt-3">
+            <a routerLink="/auth/login">¿Ya tiene una cuenta?</a>
+        </div>
+    </form>
+</div>
