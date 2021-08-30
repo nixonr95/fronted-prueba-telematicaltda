@@ -9,6 +9,7 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { EnviarMensajeComponent } from './components/enviar-mensaje/enviar-mensaje.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PublicacionesComponent } from './pages/publicaciones/publicaciones.component';
+import { MensajesEnviadosComponent } from './pages/mensajes-enviados/mensajes-enviados.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PublicacionesComponent } from './pages/publicaciones/publicaciones.comp
     TarjetaPublicidadComponent,
     MensajesComponent,
     EnviarMensajeComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    MensajesEnviadosComponent
   ],
   imports: [
     CommonModule,
