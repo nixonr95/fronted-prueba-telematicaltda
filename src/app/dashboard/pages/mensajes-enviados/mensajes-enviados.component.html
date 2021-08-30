@@ -1,0 +1,13 @@
+<h1>Buzón de salida</h1>
+<hr/>
+<mat-card class="tarjeta__publicidad mt-4" 
+          *ngFor="let mensaje of mensajesEnviados">
+    <mat-card-header>
+      <mat-card-title>{{mensaje.nombreReceptor}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+          {{mensaje.mensaje.message}}
+      </p>
+    </mat-card-content>
+</mat-card>
